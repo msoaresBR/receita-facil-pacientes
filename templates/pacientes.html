@@ -1,0 +1,69 @@
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias: https://getbootstrap.com.br/docs/3.3/css/#tables -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Receita Facil - Pacientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Receita F@cil - Pacientes</h1>
+      <div class="section editor"> <label for="nome">Nome <input id="nome" class="form-control" type="text"> </label> 
+        <label for="cpf">CPF <input id="cpf" type="text" class="form-control"> </label>
+
+        <label for="rg">RG <input id="rg" class="form-control" type="text"> </label> 
+        <label for="dtnascto">Data Nascto <input id="dtnascto" type="text" class="form-control"> </label> 
+        <label for="email">E-mail <input id="email" class="form-control" type="text"> </label> <br>         
+        <label for="cep">CEP <input id="cep" class="form-control" type="text"> </label> 
+        <label for="endereco">Endereço <input id="endereco" type="text" class="form-control"> </label> 
+        <label for="bairro">Bairro <input id="bairro" type="text" class="form-control"> </label> 
+        <label for="cidade">Cidade <input id="cidade" type="text" class="form-control"> </label> 
+        <label for="estado">UF <input id="estado" type="text" class="form-control"> </label> <br>
+        <label for="convenio">Convenio <input id="convenio" class="form-control" type="text"> </label> <br>
+
+
+        <button id="create" class="btn btn-primary">Create</button> <button id="reset" class="btn btn-info">Read</button>  <button id="update" class="btn btn-warning">Update</button>
+        <button id="delete" class="btn btn-danger">Delete</button> </div>
+      <br>
+      <blockquote>
+        <p>Clique duas vezes nos nomes abaixo para editar.</p>
+      </blockquote>
+      <div class="pacientes">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>RG</th>
+              <th>Data Nascto</th>
+              <th>E-mail</th>
+              <th>CEP</th>
+              <th>Endereço</th>
+              <th>Bairro</th>
+              <th>Cidade</th>   
+              <th>UF</th>
+              <th>Convenio</th>
+              <th>Data Atualizacao</th> 
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="error"> </div>
+    </div>
+    <script src="static/js/pacientes.js"></script>
+
+    <!-- Dependencias Bootstrap: jQuery.js, Popper.js, Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+

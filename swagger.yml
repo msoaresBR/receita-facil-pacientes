@@ -1,0 +1,218 @@
+swagger: "2.0"
+info:
+  description: Swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger ReST Pacientes
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+paths:
+  /pacientes:
+    get:
+      operationId: pacientes.read_all
+      tags:
+        - Pacientes
+      summary: Lista de pacientes
+      description: Read Lista de Pacientes
+      parameters:
+        - name: length
+          in: query
+          type: integer
+          description: Number of Pacientes to get from Pacientes
+          required: false
+        - name: offset
+          in: query
+          type: integer
+          description: Offset from beginning of list where to start gathering Pacientes
+          required: false
+      responses:
+        200:
+          description: Successfully read Pacientes list operation
+          schema:
+            type: array
+            items:
+              properties:
+                nome:
+                  type: string
+                cpf:
+                  type: string
+                rg:
+                  type: string
+                dtnascto:
+                  type: string
+                email:
+                  type: string
+                cep:
+                  type: string
+                endereco:
+                  type: string
+                bairro:
+                  type: string
+                cidade:
+                  type: string
+                estado:
+                  type: string
+                convenio:
+                  type: string
+                dataatualizacao:
+                  type: string
+
+
+    post:
+      operationId: pacientes.create
+      tags:
+        - Pacientes
+      summary: Create a person and add it to the Pacientes list
+      description: Create a new person in the Pacientes list
+      parameters:
+        - name: person
+          in: body
+          description: Person to create
+          required: True
+          schema:
+            type: object
+            properties:
+              nome:
+                type: string
+                description: Nome do paciente
+              cpf:
+                type: string
+                description: cadastro pessoa fisica
+              rg:
+                type: string
+                description: documento de identidade
+              dtnascto:
+                type: string
+                description: data de nascimento
+              email:
+                type: string
+                description: endereco de email
+              cep:
+                type: string
+                description: codigo enderecamento postal
+              endereco:
+                type: string
+                description: rua, numero e complemento do endereco
+              bairro:
+                type: string
+                description: bairro 
+              cidade:
+                type: string
+                description: cidade
+              estado:
+                type: string
+                description: unidade da federacao
+              convenio:
+                type: string
+                description: convenio medico do paciente
+
+      responses:
+        201:
+          description: Successfully created person in list
+
+  /pacientes/{cpf}:
+    get:
+      operationId: pacientes.read_one
+      tags:
+        - Pacientes
+      summary: Read one person from the Pacientes list
+      description: Read one person from the Pacientes list
+      parameters:
+        - name: cpf
+          in: path
+          description: numero do cpf do paciente
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read person from Pacientes list operation
+          schema:
+            properties:
+              nome:
+                type: string
+              cpf:
+                type: string
+              rg:
+                type: string
+              dtnascto:
+                type: string
+              email:
+                type: string
+              cep:
+                type: string
+              endereco:
+                type: string
+              bairro:
+                type: string
+              cidade:
+                type: string
+              estado:
+                type: string
+              convenio:
+                type: string
+              dataatualizacao:
+                type: string
+
+    put:
+      operationId: pacientes.update
+      tags:
+        - Pacientes
+      summary: Update a person in the Pacientes list
+      description: Update a person in the Pacientes list
+      parameters:
+        - name: cpf
+          in: path
+          description: cpf of the person to update in the list
+          type: string
+          required: True
+        - name: person
+          in: body
+          schema:
+            type: object
+            properties:
+              nome:
+                type: string
+              cpf:
+                type: string
+              rg:
+                type: string
+              dtnascto:
+                type: string
+              email:
+                type: string
+              cep:
+                type: string
+              endereco:
+                type: string
+              bairro:
+                type: string
+              cidade:
+                type: string
+              estado:
+                type: string
+              convenio:
+                type: string
+
+      responses:
+        200:
+          description: Successfully updated person in Pacientes list
+
+    delete:
+      operationId: pacientes.delete
+      tags:
+        - Pacientes
+      summary: Delete a person from the Pacientes list
+      description: Delete a person
+      parameters:
+        - name: cpf
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a person from Pacientes list
+

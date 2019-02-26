@@ -121,10 +121,28 @@ ns.view = (function() {
         reset: function() {
             $cpf.val('');
             $nome.val('').focus();
+	    $rg.val('');
+            $dtnascto.val('');
+	    $email.val('');
+	    $cep.val('');
+            $endereco.val('');
+	    $bairro.val('');
+	    $cidade.val('');
+	    $estado.val('');
+            $convenio.val('');
         },
         update_editor: function(nome, cpf, rg, dtnascto, email, cep, endereco, bairro, cidade, estado, convenio) {
             $cpf.val(cpf);
             $nome.val(nome).focus();
+	    $rg.val(rg);
+            $dtnascto.val(dtnascto);
+	    $email.val(email);
+	    $cep.val(cep);
+            $endereco.val(endereco);
+	    $bairro.val(bairro);
+	    $cidade.val(cidade);
+	    $estado.val(estado);
+            $convenio.val(convenio);
         },
         build_table: function(people) {
             let rows = ''
@@ -182,17 +200,17 @@ ns.controller = (function(m, v) {
 
     // Create our event handlers
     $('#create').click(function(e) {
-        let $nome = $('#nome'),
-		    $cpf = $('#cpf'),
-		    $rg = $('#rg'),
-            $dtnascto = $('#dtnascto'),
-		    $email = $('#email'),
-		    $cep = $('#cep'),
-            $endereco = $('#endereco'),
-		    $bairro = $('#bairro'),
-		    $cidade = $('#cidade'),
-		    $estado = $('#estado'),
-            $convenio = $('#convenio');
+        let nome = $nome.val(),
+            cpf = $cpf.val(),
+	    rg = $rg.val(),
+            dtnascto = $dtnascto.val(),
+	    email = $email.val(),
+	    cep = $cep.val(),
+            endereco = $endereco.val(),
+	    bairro = $bairro.val(),
+	    cidade = $cidade.val(),
+	    estado = $estado.val(),
+            convenio = $convenio.val();
 
         e.preventDefault();
 
@@ -204,17 +222,17 @@ ns.controller = (function(m, v) {
     });
 
     $('#update').click(function(e) {
-        let $nome = $('#nome'),
-		    $cpf = $('#cpf'),
-		    $rg = $('#rg'),
-            $dtnascto = $('#dtnascto'),
-		    $email = $('#email'),
-		    $cep = $('#cep'),
-            $endereco = $('#endereco'),
-		    $bairro = $('#bairro'),
-		    $cidade = $('#cidade'),
-		    $estado = $('#estado'),
-            $convenio = $('#convenio');
+        let nome = $nome.val(),
+            cpf = $cpf.val(),
+	    rg = $rg.val(),
+            dtnascto = $dtnascto.val(),
+	    email = $email.val(),
+	    cep = $cep.val(),
+            endereco = $endereco.val(),
+	    bairro = $bairro.val(),
+	    cidade = $cidade.val(),
+	    estado = $estado.val(),
+            convenio = $convenio.val();
 
         e.preventDefault();
 
